@@ -7,6 +7,16 @@ $ npm install
 $ npm run dev
 ```
 
+```
+Test
+01:data binding (one way binding)
+02:v-model (two way binding)
+03:computed
+04:methods
+05:v-if,v-show
+
+```
+
 # client
 
 > Nuxt.js project
