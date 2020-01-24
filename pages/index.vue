@@ -3,21 +3,20 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        client
+        Hello NuxtJS By SunvoDz
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project SuvnoDz
+      <nuxt-link to="/about">About</nuxt-link><br/>
+      <nuxt-link to="/test1">01:data binding (one way binding)</nuxt-link><br/>
+      <nuxt-link to="/test2">02:v-model (two way binding)</nuxt-link><br/>
+      <nuxt-link to="/test3">03:computed</nuxt-link><br/>
+      <nuxt-link to="/test4">04:methods</nuxt-link><br/>
+      <nuxt-link to="/test5">05:v-if,v-show</nuxt-link><br/>
+      <nuxt-link to="/test6">06:v-for</nuxt-link><br/>
+      <nuxt-link to="/test7">07:css class binding</nuxt-link><br/>
+      <nuxt-link to=/index>08:nuxt routing</nuxt-link><br/>
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+      <button @click="goToDo">Go To Do Simple App</button>
     </div>
   </section>
 </template>
@@ -28,6 +27,16 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
+  },
+  methods:{
+    goToDo(){
+      //push,replace  //no back,go(number)
+      //push('/todo'),
+      //push({past: '/todo'},
+      //push('/todo?id=1')),
+      //push({path: '/todo',query:{id:1}})
+      this.$router.push('/todo')
+    }
   }
 }
 </script>
