@@ -18,6 +18,7 @@ Test
 07:css class binding
 08:nuxt routing
 ```
+![image](https://user-images.githubusercontent.com/42707869/73060812-424f5500-3ecb-11ea-8b2e-c81588f4543b.png)
 
 # client
 
