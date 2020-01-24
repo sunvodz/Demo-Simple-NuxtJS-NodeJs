@@ -10,6 +10,7 @@
           <td>Id</td>
           <td>Username</td>
           <td>Email</td>
+          <td>Action</td>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +18,7 @@
           <td>{{ c.id }}</td>
           <td>{{ c.username }}</td>
           <td>{{ c.email }}</td>
+          <td><button @click="doEdit">Edit</button><button v-on:click="doDelete(c.id)">Delete</button></td>
         </tr>
       </tbody>
     </table>
@@ -47,8 +49,8 @@ export default {
     doEdit() {
         console.log("Edit");
     },
-    doDelete() {
-        console.log("Delete");
+    doDelete(id) {
+        console.log("Delete"+id);
     }
   }
 };
