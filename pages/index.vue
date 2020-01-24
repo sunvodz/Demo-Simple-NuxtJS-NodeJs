@@ -7,14 +7,14 @@
       </h1>
       <h2 class="subtitle">
       <nuxt-link to="/about">About</nuxt-link><br/>
-      <nuxt-link to="/test1">01:data binding (one way binding)</nuxt-link><br/>
-      <nuxt-link to="/test2">02:v-model (two way binding)</nuxt-link><br/>
-      <nuxt-link to="/test3">03:computed</nuxt-link><br/>
-      <nuxt-link to="/test4">04:methods</nuxt-link><br/>
-      <nuxt-link to="/test5">05:v-if,v-show</nuxt-link><br/>
-      <nuxt-link to="/test6">06:v-for</nuxt-link><br/>
-      <nuxt-link to="/test7">07:css class binding</nuxt-link><br/>
-      <nuxt-link to=/index>08:nuxt routing</nuxt-link><br/>
+      <nuxt-link to="/test01">01:data binding (one way binding)</nuxt-link><br/>
+      <nuxt-link to="/test02">02:v-model (two way binding)</nuxt-link><br/>
+      <nuxt-link to="/test03">03:computed</nuxt-link><br/>
+      <nuxt-link to="/test04">04:methods</nuxt-link><br/>
+      <nuxt-link to="/test05">05:v-if,v-show</nuxt-link><br/>
+      <nuxt-link to="/test06">06:v-for</nuxt-link><br/>
+      <nuxt-link to="/test07">07:css class binding</nuxt-link><br/>
+      <nuxt-link to=/>08:nuxt routing</nuxt-link><br/>
       </h2>
       <button @click="goToDo">Go To Do Simple App</button>
     </div>
