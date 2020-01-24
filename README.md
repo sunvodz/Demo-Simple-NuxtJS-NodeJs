@@ -14,7 +14,9 @@ Test
 03:computed
 04:methods
 05:v-if,v-show
-
+06:v-for
+07:css class binding
+08:nuxt routing
 ```
 
 # client
