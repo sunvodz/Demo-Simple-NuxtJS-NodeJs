@@ -43,6 +43,12 @@ export default {
         username: this.username,
         email: this.email+"@sunvo.sunvo"
       });
+    },
+    doEdit() {
+        console.log("Edit");
+    },
+    doDelete() {
+        console.log("Delete");
     }
   }
 };
