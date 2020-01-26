@@ -1,14 +1,29 @@
 <template>
-  <div>
+  <v-app>
     <h3>
       <nuxt-link to=/>Home</nuxt-link>
       Login
       Register
     </h3>
     <nuxt/>
-  </div>
+  </v-app>
 </template>
+<script>
+export default {
+   created() {
+     let users = [];
+    for (let i = 1; i <= 100; i++) {
+      users.push({
+        id: ("" + i).padStart(3, "0"),
+        name: `Name ${i}`,
+        room: "" + Math.ceil(i / 30)
+      });
+    }
+    this.$store.commit("setUsers", users);
+  } //created
+}
 
+</script>
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
