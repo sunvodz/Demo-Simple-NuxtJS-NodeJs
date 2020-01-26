@@ -11,16 +11,15 @@
         <td>Name</td>
         <td>Room</td>
       </tr>
-      <tr v-for="u in users2" :key="u.id">
-        <td>{{ u.id }}</td>
-        <td>{{ u.name }}</td>
-        <td>{{ u.room }}</td>
+      <tr v-for="c in customers2" :key="c.id">
+        <td>{{ c.id }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.room }}</td>
       </tr>
     </table>
   </div>
 </template>
 <script>
-
 export default {
   data() {
     return {
@@ -28,20 +27,20 @@ export default {
     };
   }, //data
   computed: {
-    users() {
-      return this.$store.state.users;
+    customers() {
+      return this.$store.state.customers;
     },
     roomList() {
       return Object.keys(
-        this.users.reduce((p, u) => {
+        this.customers.reduce((p, u) => {
           p[u.room] = u.room;
           return p;
         }, {})
       );
     },
-    users2() {
-      return this.users.filter(u => u.room === this.room);
+    customers2() {
+      return this.customers.filter(u => u.room === this.room);
     }
-  } //computed
+  }, //computed
 };
 </script>

@@ -18,10 +18,10 @@
       </h2>
       <button @click="goToDo">Go To Do Simple App</button>
       <h3>
-        <nuxt-link to="/user-list">User List</nuxt-link><br/>
-        <nuxt-link to="/user-list2">User List2</nuxt-link><br/>
-        <nuxt-link to="/user-list3">User List3</nuxt-link><br/>
-        <nuxt-link to="/user-list4">User List4</nuxt-link><br/>
+        <nuxt-link to="/customer-list">Customer List</nuxt-link><br/>
+        <nuxt-link to="/customer-list2">Customer List2</nuxt-link><br/>
+        <nuxt-link to="/customer-list3">Customer List3</nuxt-link><br/>
+        <nuxt-link to="/customer-list4">Customer List4</nuxt-link><br/>
 
       </h3>
     </div>

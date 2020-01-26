@@ -10,16 +10,20 @@
 </template>
 <script>
 export default {
+  // ย้าย created ไป store แทน
    created() {
-     let users = [];
-    for (let i = 1; i <= 100; i++) {
-      users.push({
-        id: ("" + i).padStart(3, "0"),
-        name: `Name ${i}`,
-        room: "" + Math.ceil(i / 30)
-      });
-    }
-    this.$store.commit("setUsers", users);
+     //เรียกใช้ getCustomers
+     // ส่งค่าโดย this.$store.dispatch('getCustomers','ค่าที่ส่งไป')
+     this.$store.dispatch('getCustomers')
+  //    let customers = [];
+  //   for (let i = 1; i <= 100; i++) {
+  //     customers.push({
+  //       id: ("" + i).padStart(3, "0"),
+  //       name: `Name ${i}`,
+  //       room: "" + Math.ceil(i / 30)
+  //     });
+  //   }
+  //   this.$store.commit("setCustomers", customers);
   } //created
 }
 

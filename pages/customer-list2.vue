@@ -5,17 +5,17 @@
         <option v-for="r in roomList" :value="r" :key="r">Room {{ r }}</option>
       </select>
     </div>
-        <nuxt-link to="/user-list3">User List3</nuxt-link><br/>
+    <nuxt-link to="/customer-list3">Customer List3</nuxt-link><br />
     <table>
       <tr>
         <td>Id</td>
         <td>Name</td>
         <td>Room</td>
       </tr>
-      <tr v-for="u in users2" :key="u.id">
-        <td>{{ u.id }}</td>
-        <td>{{ u.name }}</td>
-        <td>{{ u.room }}</td>
+      <tr v-for="c in customers2" :key="c.id">
+        <td>{{ c.id }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.room }}</td>
       </tr>
     </table>
   </div>
@@ -29,36 +29,38 @@ export default {
   }, //data
   computed: {
     //ใช้ข้อมูลจาก store
-    users() {
-      return this.$store.state.users;
+    customers() {
+      return this.$store.state.customers;
     },
     roomList() {
       return Object.keys(
-        this.users.reduce((p, u) => {
+        this.customers.reduce((p, u) => {
           p[u.room] = u.room;
           return p;
         }, {})
       );
     },
-    users2() {
-      return this.users.filter(u => u.room === this.room);
+    customers2() {
+      return this.customers.filter(c => c.room === this.room);
     }
   }, //computed
+
   created() {
-    //fuction นี้จะถูกเรียกช้งานเมื่อ component ถูกเรียกใช้งานครั้งแรก อัตโนมัติ ทำงานตอนเรียก user-list ทันที ขั้นแรกเลย
-    let users = [];
+    //ควร ย้าย created ไป store แทน
+    //fuction นี้จะถูกเรียกช้งานเมื่อ component ถูกเรียกใช้งานครั้งแรก อัตโนมัติ ทำงานตอนเรียก customers-list ทันที ขั้นแรกเลย
+    let customers = [];
     for (let i = 1; i <= 100; i++) {
-      users.push({
+      customers.push({
         id: ("" + i).padStart(3, "0"),
         name: `Name ${i}`,
         room: "" + Math.ceil(i / 30)
       });
     }
     //นำข้อมูลไปเก็บไว้ store
-    this.$store.commit("setUsers", users);
+    this.$store.commit("setCustomers", customers);
     //กำหนดเวลา 5วิ ค่อยทำงาน
     // setInterval(() => {
-    //   this.$store.commit("setUsers", users);
+    //   this.$store.commit("setCustomers", customers);
     // }, 2000);
   } //created
 };

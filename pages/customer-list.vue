@@ -16,10 +16,10 @@
         <td>Name</td>
         <td>Room</td>
       </tr>
-      <tr v-for="u in users2" :key="u.id">
-        <td>{{ u.id }}</td>
-        <td>{{ u.name }}</td>
-        <td>{{ u.room }}</td>
+      <tr v-for="c in customers2" :key="c.id">
+        <td>{{ c.id }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.room }}</td>
       </tr>
     </table>
   </div>
@@ -28,9 +28,9 @@
 export default {
   data() {
     //สร้างข้อมูลผู้ใช้มา 100คน
-    let users = [];
+    let customers = [];
     for (let i = 1; i <= 100; i++) {
-      users.push({
+      customers.push({
         // (''+i) = cover number to string , padStart(3,"0") = 001
         id: ("" + i).padStart(3, "0"),
         name: `Name ${i}`,
@@ -39,26 +39,26 @@ export default {
       });
     }
     return {
-      //users: users,
-      users,
+      //customers: customers,
+      customers,
       room: "1"
     };
   },
   computed: {
     roomList() {
       //ย่อๆจากล่างๆ
-       return Object.keys(this.users.reduce((p, u) => {
+       return Object.keys(this.customers.reduce((p, u) => {
        p[u.room] = u.room
         return p
       }, {}))
 
-      // return this.users.reduce((p, u) => {
+      // return this.customers.reduce((p, u) => {
       //  p[u.room] = u.room
       //   return p
       // }, {});
 
       //ใช้ opject
-      // return this.users.reduce((p, u) => {
+      // return this.customers.reduce((p, u) => {
       //   //ถ้ายังไม่มีห้อง1
       //   if(!p[u.room]){
       //     //ให้เพิ่มห้อง1ลงไป
@@ -70,7 +70,7 @@ export default {
       //ใช้ array
       // // reduce วนรูป
       // //prev คือ ค่าจากรอบที่แล้ว
-      // return this.users.reduce((prev, u) => {
+      // return this.customers.reduce((prev, u) => {
       //   //เอา prev หาห้องจะเจอมั้ย
       //   if (prev.indexof(u.room) === -1) {
       //     //เอาเลขห้องไปเก็บไว้ใน prev = ['1'=>'4']
@@ -80,21 +80,21 @@ export default {
       // }, [] /*[] คือ ค่าตั้งต้น*/);
 
       // let out = [];
-      // for (let i = 0; i < this.users.length; i++) {
-      //   if (out.indexOf(this.users[i].room) === -1) {
-      //     out.push(this.users[i].room);
+      // for (let i = 0; i < this.customers.length; i++) {
+      //   if (out.indexOf(this.customers[i].room) === -1) {
+      //     out.push(this.customers[i].room);
       //   }
       // }
 
       //วิธีที่ดี
       // let out = {};
       // //วนตามจำนวนผู้ใช้
-      // for (let i = 0; i < this.users.length; i++) {
+      // for (let i = 0; i < this.customers.length; i++) {
       // //ถ้าผู้ใช้คนที่ i มีห้องตามที่เลือก ให้เก็บค่าห้องไว้ใน out = {'1','2','3','4'}
-      //   if (!out[this.users[i].room]) {
+      //   if (!out[this.customers[i].room]) {
       //     // out = {'1':true,'2':true,'3':true,'4':true}
-      //     out[this.users[i].room] = true;
-      //     // out[this.users[i].room] = this.users[i].room;
+      //     out[this.customers[i].room] = true;
+      //     // out[this.customers[i].room] = this.customers[i].room;
       //   }
       // }
       // // return out;
@@ -102,26 +102,26 @@ export default {
       // // Object.keys(out); = ['1','2','3','4']
       // return Object.keys(out);
     },
-    users2() {
+    customers2() {
       //หรือ ย่อได้อีก ตัวแปลเดียวไม่ต้องใส่วงเล็บ ค่าว่างและมีมากว่า1ต้องใส่วงเล็บ
-      return this.users.filter(u => u.room === this.room);
+      return this.customers.filter(c => c.room === this.room);
 
       // let out = [];
-      // for (let i = 0; i < this.users.length; i++) {
+      // for (let i = 0; i < this.customers.length; i++) {
       //   /// '===' is 1 = '1'
-      //   if (this.users[i].room === this.room) {
-      //     out.push(this.users[i]);
+      //   if (this.customers[i].room === this.room) {
+      //     out.push(this.customers[i]);
       //   }
       // }
       // return out;
 
       //หรือ จะค้นหา room ตาม thisroom ที่เลือก
-      /* return this.users.filter(u => {
+      /* return this.customers.filter(u => {
         return u.room === this.room;
       }); */
 
       //หรือ ย่อได้อีก
-      //return this.users.filter(u => u.room === this.room )
+      //return this.customers.filter(u => u.room === this.room )
     }
   }
 };
