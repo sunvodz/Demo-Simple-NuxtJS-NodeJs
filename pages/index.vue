@@ -19,6 +19,8 @@
       <button @click="goToDo">Go To Do Simple App</button>
       <h3>
         <nuxt-link to="/user-list">User List</nuxt-link><br/>
+        <nuxt-link to="/user-list2">User List2</nuxt-link><br/>
+        <nuxt-link to="/user-list3">User List3</nuxt-link><br/>
       </h3>
     </div>
   </section>

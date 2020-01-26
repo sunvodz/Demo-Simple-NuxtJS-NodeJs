@@ -27,6 +27,7 @@
 <script>
 export default {
   data() {
+    //สร้างข้อมูลผู้ใช้มา 100คน
     let users = [];
     for (let i = 1; i <= 100; i++) {
       users.push({
