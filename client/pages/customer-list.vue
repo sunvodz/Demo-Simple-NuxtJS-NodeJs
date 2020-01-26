@@ -29,15 +29,15 @@ export default {
   data() {
     //สร้างข้อมูลผู้ใช้มา 100คน
     let customers = [];
-    // for (let i = 1; i <= 100; i++) {
-    //   customers.push({
-    //     // (''+i) = cover number to string , padStart(3,"0") = 001
-    //     id: ("" + i).padStart(3, "0"),
-    //     name: `Name ${i}`,
-    //     // หารปัดขึ้น
-    //     room: "" + Math.ceil(i / 30)
-    //   });
-    // }
+    for (let i = 1; i <= 100; i++) {
+      customers.push({
+        // (''+i) = cover number to string , padStart(3,"0") = 001
+        id: ("" + i).padStart(3, "0"),
+        name: `Name ${i}`,
+        // หารปัดขึ้น
+        room: "" + Math.ceil(i / 30)
+      });
+    }
     return {
       //customers: customers,
       customers,
@@ -47,8 +47,8 @@ export default {
   computed: {
     roomList() {
       //ย่อๆจากล่างๆ
-       return Object.keys(this.customers.reduce((p, u) => {
-       p[u.room] = u.room
+       return Object.keys(this.customers.reduce((p, c) => {
+       p[c.room] = c.room
         return p
       }, {}))
 

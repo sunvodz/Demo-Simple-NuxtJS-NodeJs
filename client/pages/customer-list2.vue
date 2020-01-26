@@ -34,8 +34,8 @@ export default {
     },
     roomList() {
       return Object.keys(
-        this.customers.reduce((p, u) => {
-          p[u.room] = u.room;
+        this.customers.reduce((p, c) => {
+          p[c.room] = c.room;
           return p;
         }, {})
       );

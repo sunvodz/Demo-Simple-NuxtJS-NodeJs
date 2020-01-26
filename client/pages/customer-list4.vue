@@ -32,14 +32,14 @@ export default {
     },
     roomList() {
       return Object.keys(
-        this.customers.reduce((p, u) => {
-          p[u.room] = u.room;
+        this.customers.reduce((p, c) => {
+          p[c.room] = c.room;
           return p;
         }, {})
       );
     },
     customers2() {
-      return this.customers.filter(u => u.room === this.room);
+      return this.customers.filter(c => c.room === this.room);
     }
   }, //computed
 };

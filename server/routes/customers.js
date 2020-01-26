@@ -13,8 +13,8 @@ router.post("/customer/create", (req, res, next) => {
   console.log("body : ", req.body);
 
   let list = [
-    { id: "001", name: "sunvo", room: req.params.room },
-    { id: "002", name: "pongpan", room: req.params.room }
+    { id: "001", name: "sunvo", room: req.body.room },
+    { id: "002", name: "pongpan", room: req.body.room }
   ];
   res.send(list);
   console.log("Create Customer");
