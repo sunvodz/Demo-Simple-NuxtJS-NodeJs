@@ -22,13 +22,16 @@ module.exports = {
   plugins: [
     "~/plugins/axios" //-- add plugins axios
   ],
-  proxy: {
-    "/api": "http://localhost:8080", //-- ตั้งค่า map proxy url api server
-    ws: true
-  },
   modules: [
-    "@nuxtjs/proxy" //-- add modules proxy
+    "@nuxtjs/proxy", //-- add modules proxy
+    '@nuxtjs/axios'
   ],
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api': 'http://localhost:8088'
+  },
   build: {
     vendor: [
       "vue-axios" //-- add vendor vue-axios

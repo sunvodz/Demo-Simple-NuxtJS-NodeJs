@@ -1,12 +1,12 @@
 <template>
-  <v-app>
+  <div>
     <h3>
       <nuxt-link to=/>Home</nuxt-link>
       Login
       Register
     </h3>
     <nuxt/>
-  </v-app>
+  </div>
 </template>
 <script>
 export default {
