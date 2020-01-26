@@ -20,6 +20,7 @@
   </div>
 </template>
 <script>
+
 export default {
   data() {
     return {
@@ -27,7 +28,6 @@ export default {
     };
   }, //data
   computed: {
-    //ใช้ข้อมูลจาก store
     users() {
       return this.$store.state.users;
     },
@@ -42,24 +42,6 @@ export default {
     users2() {
       return this.users.filter(u => u.room === this.room);
     }
-  }, //computed
-  created() {
-    //fuction นี้จะถูกเรียกช้งานเมื่อ component ถูกเรียกใช้งานครั้งแรก อัตโนมัติ ทำงานตอนเรียก user-list ทันที ขั้นแรกเลย
-    let users = [];
-    for (let i = 1; i <= 100; i++) {
-      users.push({
-        id: ("" + i).padStart(3, "0"),
-        name: `Name ${i}`,
-        room: "" + Math.ceil(i / 30)
-      });
-    }
-    //นำข้อมูลไปเก็บไว้ store
-    this.$store.commit("setUsers", users);
-    
-    //กำหนดเวลา 5วิ ค่อยทำงาน
-    // setInterval(() => {
-    //   this.$store.commit("setUsers", users);
-    // }, 5000);
-  } //created
+  } //computed
 };
 </script>

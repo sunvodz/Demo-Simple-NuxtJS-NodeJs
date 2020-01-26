@@ -5,6 +5,7 @@
         <option v-for="r in roomList" :value="r" :key="r">Room {{ r }}</option>
       </select>
     </div>
+        <nuxt-link to="/user-list3">User List3</nuxt-link><br/>
     <table>
       <tr>
         <td>Id</td>
@@ -55,11 +56,10 @@ export default {
     }
     //นำข้อมูลไปเก็บไว้ store
     this.$store.commit("setUsers", users);
-    
     //กำหนดเวลา 5วิ ค่อยทำงาน
     // setInterval(() => {
     //   this.$store.commit("setUsers", users);
-    // }, 5000);
+    // }, 2000);
   } //created
 };
 </script>
