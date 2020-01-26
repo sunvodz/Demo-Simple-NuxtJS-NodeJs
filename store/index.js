@@ -1,9 +1,11 @@
+//เก็บข้อมูล
 export const state = () => ({
   online: false,
   drawer: false,
   users: [],
 })
 
+//แก้ไข
 export const mutations = {
   setOnline(state, status) {
     state.online = status
@@ -16,7 +18,7 @@ export const mutations = {
   },
 }
 
-
+//สั่งงาน
 export const actions = {
 
 }
