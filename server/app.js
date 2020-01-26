@@ -23,11 +23,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //รับค่าแบบbody
-app.use('/', bodyParser.json());
+app.use('/api', bodyParser.json());
 
-app.use('/', indexRouter);
-app.use('/', usersRouter);
-app.use('/', customerRouter);
+app.use('/api', indexRouter);
+app.use('/api', usersRouter);
+app.use('/api', customerRouter);
 
 
 // catch 404 and forward to error handler

@@ -2,12 +2,12 @@ var express = require("express");
 var router = express.Router();
 
 /* GET customers listing. */
-router.get("/api/customer/list", (req, res, next) => {
+router.get("/customer/list", (req, res, next) => {
   console.log("Show Customer");
 });
 
-//http://localhost:8080/api/customer/create?room=123
-router.post("/api/customer/create", (req, res, next) => {
+//http://localhost:8080/customer/create?room=123
+router.post("/customer/create", (req, res, next) => {
   console.log("params : ", req.params);
   console.log("qurey : ", req.query);
   console.log("body : ", req.body);
@@ -20,11 +20,11 @@ router.post("/api/customer/create", (req, res, next) => {
   console.log("Create Customer");
 });
 
-router.put("/api/customer/update", (req, res, next) => {
+router.put("/customer/update", (req, res, next) => {
   console.log("Update Customer");
 });
 
-router.delete("/api/customer/delete", (req, res, next) => {
+router.delete("/customer/delete", (req, res, next) => {
   console.log("Delete Customer");
 });
 

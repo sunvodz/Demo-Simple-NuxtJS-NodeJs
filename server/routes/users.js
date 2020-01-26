@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/api/users/list', function(req, res, next) {
+router.get('/users/list', function(req, res, next) {
   res.send('respond with a resource');
 });
 
