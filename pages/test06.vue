@@ -29,6 +29,22 @@
         </tr>
       </tbody>
     </table>
+    <br /><br />
+    <ul>
+      <li v-for="(c,index) in customers" :key="c.id">
+        <span>{{ index }}</span>
+        <span>{{ c.id }}</span>
+        <span>{{ c.username }}</span>
+        <span>{{ c.email }}</span>
+      </li>
+    </ul>
+    <br /><br />
+<ul>
+      <li v-for="i in 10" :key="i">
+        <span>{{ i }}</span>
+      </li>
+    </ul>
+    <br /><br />
   </div>
 </template>
 <script>
