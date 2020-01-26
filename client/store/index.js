@@ -36,15 +36,23 @@ export const actions = {
     // Vue.axios.post('/customer/create',{
     //     room:'2',year:3
     //   })
+
     //await รอ ผลลัพธ์
     //query
-
     let res = await Vue.axios.post("/customer/create", {
       id: "1",
       name: "sunvo",
       room: '1'
     });
-    console.log(res.data);
+    // let res2 = await Vue.axios.get("/customer/list", {
+    //   room: "2",
+    // });
+    // let res3 = await Vue.axios.get("/customer/list", {
+    //   params:{
+    //     room: "3",
+    //   }
+    // });
+
     //4.commit
     store.commit("setCustomers", res.data);
     //5.เก็บข้อมูลลง localStrotage
