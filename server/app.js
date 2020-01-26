@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var customerRouter = require('./routes/customers');
 
+var bodyParser = require('body-parser');
 
 var app = express();
 
@@ -21,8 +22,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//รับค่าแบบbody
+app.use('/', bodyParser.json());
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 app.use('/', customerRouter);
 
 
@@ -39,7 +43,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  // res.render('error');
 
 });
 
