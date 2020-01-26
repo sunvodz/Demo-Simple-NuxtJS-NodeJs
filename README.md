@@ -1,6 +1,8 @@
 
 ![image](https://user-images.githubusercontent.com/42707869/73060812-424f5500-3ecb-11ea-8b2e-c81588f4543b.png)
-# Intro-NuxtJS
+# NuxtJS-NodeJs-MySQL
+
+# client
 ```
 $ npm install -g vue-cli
 $ vue init nuxt-community/starter-template client
@@ -21,26 +23,16 @@ Test
 08:nuxt routing
 ```
 
-# client
-
-> Nuxt.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm install # Or yarn install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
+# server
+```
+$ npm init -y
+$ npm install express
+$ express
+$ npm install --save-dev nodemon
+Edit package.json "start": "nodemon ./bin/www"
+$ npm install
 $ npm start
 
-# generate static project
-$ npm run generate
+Edit bin/www port 8080 
+go to http://localhost:8080/
 ```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
