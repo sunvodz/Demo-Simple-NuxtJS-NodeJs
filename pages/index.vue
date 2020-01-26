@@ -17,6 +17,9 @@
       <nuxt-link to=/>08:nuxt routing</nuxt-link><br/>
       </h2>
       <button @click="goToDo">Go To Do Simple App</button>
+      <h3>
+        <nuxt-link to="/user-list">User List</nuxt-link><br/>
+      </h3>
     </div>
   </section>
 </template>

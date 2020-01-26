@@ -1,5 +1,10 @@
 <template>
   <div>
+    <h3>
+      <nuxt-link to=/>Home</nuxt-link>
+      Login
+      Register
+    </h3>
     <nuxt/>
   </div>
 </template>
