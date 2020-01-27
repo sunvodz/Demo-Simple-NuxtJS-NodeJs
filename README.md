@@ -6,8 +6,8 @@
 ```
 $ npm install -g vue-cli
 $ vue init nuxt-community/starter-template client
-$ npm install vue-axios axios @nuxtjs/proxy
 $ cd client
+$ npm install vue-axios axios @nuxtjs/proxy
 $ npm install
 $ npm run dev
 ```
