@@ -1,9 +1,8 @@
 <template>
   <div>
     <h3>
-      <nuxt-link to=/>Home</nuxt-link>
-      Login
-      Register
+      <nuxt-link to=/home>Home</nuxt-link>
+      <nuxt-link to=/>Logout</nuxt-link>
     </h3>
     <nuxt/>
   </div>

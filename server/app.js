@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const config = require('./config')
 
+var auth = require('./routes/auth');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var customerRouter = require('./routes/customers');
@@ -25,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //รับค่าแบบbody
 app.use('/api', bodyParser.json());
 
+app.use('/api', auth);
 app.use('/api', indexRouter);
 app.use('/api', usersRouter);
 app.use('/api', customerRouter);
@@ -34,6 +37,10 @@ app.use('/api', customerRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+app.listen(config.port, () => {
+  console.log('Start server to port :', config.port)
+})
 
 // error handler
 app.use(function(err, req, res, next) {
